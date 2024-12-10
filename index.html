@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Presentation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .slide {
+        min-height: 100vh;
+        display: none;
+        padding: 20px;
+        animation: fadeIn 1s;
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      .active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        backdrop-filter: blur(5px);
+        animation: slideIn 0.5s;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .navigation {
+        position: fixed;
+        bottom: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .code-block {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        border-radius: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-width: 80%;
+        overflow-x: auto;
+      }
+
+      .screenshot {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        margin: 20px 0;
+        max-width: 80%;
+      }
+
+      h3 i {
+        color: #ffc107;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; background: #2c3e50">
+    <div id="slide1" class="slide active">
+      <h1 style="font-size: 3em; margin-bottom: 30px">
+        Advanced Management System
+      </h1>
+      <div class="feature-card">
+        <h2>A Modern Python-based Employee Management Solution</h2>
+        <p>Built with Tkinter & Modern UI Design Principles</p>
+      </div>
+      <img
+        src="./images/Screenshot (185).png"
+        alt="Main Interface Screenshot"
+        class="screenshot"
+      />
+    </div>
+
+    <div id="slide2" class="slide">
+      <h2>Key Features</h2>
+      <div
+        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px"
+      >
+        <div class="feature-card">
+          <h3><i class="fa fa-edit"></i> CRUD Operations</h3>
+          <p>Create, Read, Update, and Delete employee records</p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa fa-search"></i> Advanced Search</h3>
+          <p>Real-time search across all fields</p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa fa-file-excel"></i> Data Export</h3>
+          <p>Export to CSV with one click</p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa fa-paint-brush"></i> Modern UI</h3>
+          <p>Clean, intuitive interface with custom theming</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="slide3" class="slide">
+      <h2>Technical Architecture</h2>
+      <div class="feature-card" style="width: 80%">
+        <h3>Core Components:</h3>
+        <ul>
+          <li>Record Class: Data structure for employee information</li>
+          <li>Database Class: JSON-based data persistence</li>
+          <li>Validator Class: Input validation and data integrity</li>
+          <li>Theme Class: Consistent UI styling</li>
+          <li>ManagementSystem Class: Main application logic</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="slide4" class="slide">
+      <h2>Smart Validation System</h2>
+      <div class="code-block">
+        # Validation Examples def validate_id(id_str: str) -> bool: return
+        bool(re.match(r'^[A-Z]{2}\d{4}$', id_str)) def validate_email(email:
+        str) -> bool: return
+        bool(re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+        email))
+      </div>
+      <div class="feature-card">
+        <p>Built-in validation for:</p>
+        <ul>
+          <li>Employee IDs (XX0000 format)</li>
+          <li>Email addresses</li>
+          <li>Phone numbers</li>
+          <li>Date formats</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="slide5" class="slide">
+      <h2>User Interface Features</h2>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        "
+      >
+        <div class="feature-card">
+          <h3><i class="fa fa-bullseye"></i> Keyboard Shortcuts</h3>
+          <ul>
+            <li>Ctrl+F: Quick Search</li>
+            <li>Ctrl+N: New Record</li>
+            <li>Ctrl+S: Save Changes</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa fa-mobile-alt"></i> Responsive Design</h3>
+          <ul>
+            <li>Adapts to window size</li>
+            <li>Scrollable tables</li>
+            <li>Resizable columns</li>
+          </ul>
+        </div>
+      </div>
+      <img
+        src="./images/Screenshot (186).png"
+        alt="UI Features Demo"
+        class="screenshot"
+      />
+    </div>
+
+    <div class="navigation">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+      let currentSlide = 1;
+      const totalSlides = 5;
+
+      function showSlide(slideNumber) {
+        document.querySelectorAll(".slide").forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        document.getElementById(`slide${slideNumber}`).classList.add("active");
+      }
+
+      function nextSlide() {
+        currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = currentSlide > 1 ? currentSlide - 1 : totalSlides;
+        showSlide(currentSlide);
+      }
+
+      setInterval(nextSlide, 20000);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+      });
+    </script>
+  </body>
+</html>
